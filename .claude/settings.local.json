@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/**)",
+      "Read(//Users/dv2yl7/**)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh repo *)",
+      "WebSearch",
+      "Bash(robocopy F:\\\\code\\\\vibe_project\\\\statueLine\\\\rolline *)",
+      "Bash(git add *)"
+    ]
+  }
+}

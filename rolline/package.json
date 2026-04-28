@@ -1,0 +1,15 @@
+{
+  "name": "rolline",
+  "version": "1.0.0",
+  "description": "Custom Claude Code statusLine — shows model and current folder",
+  "bin": {
+    "rolline": "./bin/install.js"
+  },
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "keywords": ["claude-code", "statusline"],
+  "author": "Rolmoland",
+  "license": "MIT"
+}
