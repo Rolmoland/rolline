@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
-// ─── CONFIG ──────────────────────────────────────────────
-const MODEL_COLOR  = '\x1b[36m';   // cyan
-const FOLDER_COLOR = '\x1b[33m';   // yellow
-const SEP          = ' \x1b[90m·\x1b[0m ';  // dim dot separator
+const MODEL_COLOR  = '\x1b[36m';
+const FOLDER_COLOR = '\x1b[33m';
+const SEP          = ' \x1b[90m·\x1b[0m ';
 const RESET        = '\x1b[0m';
-// ─────────────────────────────────────────────────────────
+
+const MODEL_ICON  = '◆';
+const FOLDER_ICON = '◎';
 
 const path = require('path');
 
@@ -20,8 +21,8 @@ process.stdin.on('end', () => {
   const folder = path.basename(process.cwd());
 
   const parts = [
-    `${MODEL_COLOR}${model}${RESET}`,
-    `${FOLDER_COLOR}${folder}${RESET}`,
+    `${MODEL_COLOR}${MODEL_ICON} ${model}${RESET}`,
+    `${FOLDER_COLOR}${FOLDER_ICON} ${folder}${RESET}`,
   ];
 
   process.stdout.write(parts.join(SEP) + '\n');
