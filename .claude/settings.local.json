@@ -7,7 +7,21 @@
       "Bash(gh repo *)",
       "WebSearch",
       "Bash(robocopy F:\\\\code\\\\vibe_project\\\\statueLine\\\\rolline *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(python3 ./.trellis/scripts/get_context.py --mode record)",
+      "Bash(python3 ./.trellis/scripts/task.py list)",
+      "Bash(python3 .trellis/scripts/task.py list)",
+      "Bash(python3 .trellis/scripts/get_context.py --mode record)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(python3 -c \"import sys; sys.path.insert\\(0, '.trellis/scripts'\\); exec\\(open\\('.trellis/scripts/task.py'\\).read\\(\\)\\)\" list)",
+      "Bash(python3 -W ignore .trellis/scripts/task.py list)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -c \"print\\('hello'\\)\")",
+      "Bash(python .trellis/scripts/task.py list)",
+      "Bash(python .trellis/scripts/task.py archive 00-bootstrap-guidelines)",
+      "Bash(python .trellis/scripts/add_session.py --title \"feat: rolline npm statusLine\" --commit \"69fd387\" --summary \"实现 rolline npm 包：npx rolline 一键安装 Claude Code statusLine，显示模型名和当前文件夹，带 ANSI 颜色分隔。测试通过，statusLine 正确显示 Sonnet 4.6 · rolline。\")"
     ]
   }
 }
