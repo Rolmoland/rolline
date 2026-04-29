@@ -8,8 +8,8 @@
 
 <!-- @@@auto:current-status -->
 - **Active File**: `journal-1.md`
-- **Total Sessions**: 1
-- **Last Active**: 2026-04-28
+- **Total Sessions**: 2
+- **Last Active**: 2026-04-29
 <!-- @@@/auto:current-status -->
 
 ---
@@ -19,7 +19,7 @@
 <!-- @@@auto:active-documents -->
 | File | Lines | Status |
 |------|-------|--------|
-| `journal-1.md` | ~40 | Active |
+| `journal-1.md` | ~85 | Active |
 <!-- @@@/auto:active-documents -->
 
 ---
@@ -29,6 +29,7 @@
 <!-- @@@auto:session-history -->
 | # | Date | Title | Commits | Branch |
 |---|------|-------|---------|--------|
+| 2 | 2026-04-29 | feat(rolline): v1.1.0 图标+卸载+项目级安装 | `105c03e` | `master` |
 | 1 | 2026-04-28 | feat: rolline npm statusLine | `69fd387` | `master` |
 <!-- @@@/auto:session-history -->
 
