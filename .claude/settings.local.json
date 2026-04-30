@@ -25,7 +25,16 @@
       "Bash(python3 *)",
       "Read(//c/Users/22067/.claude/**)",
       "Bash(python *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(echo \"---exit:$?\")",
+      "Bash(tee /tmp/out.log)",
+      "Read(//tmp/**)",
+      "Bash(python3 .trellis/scripts/task.py create \"v1.2 context usage bar\" --slug context-usage-bar)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(tee /tmp/x)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(node rolline/lib/statusline.js)"
     ]
   }
 }
