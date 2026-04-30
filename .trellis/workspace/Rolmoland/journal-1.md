@@ -83,3 +83,46 @@
 ### Next Steps
 
 - None - task complete
+
+
+## Session 3: feat: rolline v1.2 context usage bar
+
+**Date**: 2026-05-01
+**Task**: feat: rolline v1.2 context usage bar
+**Branch**: `master`
+
+### Summary
+
+(Add summary)
+
+### Main Changes
+
+为 rolline statusLine 新增上下文用量进度条，格式：`▰▰▱▱▱▱▱▱▱▱ 14% (27.7k/200k)`
+
+**关键发现**：Claude Code v2.1.123 在 stdin JSON 中直接传入 `context_window.current_usage`，无需读取 transcript 文件，实现更简单。
+
+**改动文件**：
+- `rolline/lib/statusline.js` — 新增 `renderContextBar`，读取 `context_window` 字段
+- `rolline/package.json` — 版本升至 1.2.0
+- `~/.claude/rolline.js` — 手动同步（因 Claude Code 运行时文件被锁，无法用 Copy-Item 覆盖）
+
+**颜色阈值**：<60% 绿、60-85% 黄、>85% 红
+
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `6dec335` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
