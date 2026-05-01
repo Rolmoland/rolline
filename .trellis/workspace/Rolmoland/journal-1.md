@@ -126,3 +126,45 @@
 ### Next Steps
 
 - None - task complete
+
+
+## Session 4: v1.2.1 fix: 启动时显示上下文占用条
+
+**Date**: 2026-05-01
+**Task**: v1.2.1 fix: 启动时显示上下文占用条
+**Branch**: `master`
+
+### Summary
+
+(Add summary)
+
+### Main Changes
+
+| 项目 | 说明 |
+|------|------|
+| Bug Fix | 启动时 `current_usage` 为 null 导致上下文占用条不显示 |
+| 修复方案 | `current_usage \|\| {}` 兜底，显示 0% 空白条 |
+| 版本 | package.json 更新至 v1.2.1 |
+
+**修改文件**:
+- `rolline/lib/statusline.js` — 单行修复
+- `rolline/package.json` — 版本号 1.2.1
+
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `b94a0c6` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
