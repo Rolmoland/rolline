@@ -21,8 +21,7 @@ function fmtTokens(n) {
 
 function renderContextBar(contextWindow) {
   if (!contextWindow) return null;
-  const usage = contextWindow.current_usage;
-  if (!usage) return null;
+  const usage = contextWindow.current_usage || {};
 
   const limit = contextWindow.context_window_size || 200000;
   const inputTokens = (usage.input_tokens || 0)

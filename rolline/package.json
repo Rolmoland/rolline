@@ -1,6 +1,6 @@
 {
   "name": "rolline",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Custom Claude Code statusLine — shows model and current folder",
   "bin": {
     "rolline": "./bin/install.js"
