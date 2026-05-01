@@ -34,7 +34,11 @@
       "Bash(tee /tmp/x)",
       "Bash(echo \"Exit: $?\")",
       "Bash(echo \"EXIT: $?\")",
-      "Bash(node rolline/lib/statusline.js)"
+      "Bash(node rolline/lib/statusline.js)",
+      "Bash(node /f/code/vibe_project/statueLine/rolline/lib/statusline.js)",
+      "Bash(git -C /f/code/vibe_project/statueLine diff --name-only)",
+      "Bash(git -C /f/code/vibe_project/statueLine status)",
+      "Bash(git *)"
     ]
   }
 }
