@@ -2,16 +2,28 @@
 
 const MODEL_COLOR  = '\x1b[36m';
 const FOLDER_COLOR = '\x1b[33m';
+const BRANCH_COLOR = '\x1b[35m';
 const GREEN        = '\x1b[32m';
 const YELLOW       = '\x1b[33m';
 const RED          = '\x1b[31m';
 const SEP          = ' \x1b[90m·\x1b[0m ';
 const RESET        = '\x1b[0m';
 
-const MODEL_ICON  = '◆';
-const FOLDER_ICON = '◎';
+const MODEL_ICON  = '🧠';
+const FOLDER_ICON = '📂';
+const BRANCH_ICON = '🌲';
 
 const path = require('path');
+const { execSync } = require('child_process');
+
+function getGitBranch() {
+  try {
+    return execSync('git branch --show-current', { stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString().trim();
+  } catch (_) {
+    return null;
+  }
+}
 
 function fmtTokens(n) {
   if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
@@ -52,10 +64,14 @@ process.stdin.on('end', () => {
   const model  = data?.model?.display_name ?? 'Claude';
   const folder = path.basename(process.cwd());
 
+  const branch = getGitBranch();
+
   const parts = [
     `${MODEL_COLOR}${MODEL_ICON} ${model}${RESET}`,
     `${FOLDER_COLOR}${FOLDER_ICON} ${folder}${RESET}`,
   ];
+
+  if (branch) parts.push(`${BRANCH_COLOR}${BRANCH_ICON} ${branch}${RESET}`);
 
   const bar = renderContextBar(data?.context_window);
   if (bar) parts.push(bar);
