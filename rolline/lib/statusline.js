@@ -4,6 +4,7 @@ const MODEL_COLOR    = '\x1b[36m';
 const FOLDER_COLOR   = '\x1b[33m';
 const BRANCH_COLOR   = '\x1b[35m';
 const DURATION_COLOR = '\x1b[97m';
+const COST_COLOR     = '\x1b[92m';
 const GREEN        = '\x1b[32m';
 const YELLOW       = '\x1b[33m';
 const RED          = '\x1b[31m';
@@ -14,6 +15,7 @@ const MODEL_ICON    = '🧠';
 const FOLDER_ICON   = '📂';
 const BRANCH_ICON   = '🌲';
 const DURATION_ICON = '⌛';
+const COST_ICON     = '💰';
 
 const path = require('path');
 const { execSync } = require('child_process');
@@ -75,6 +77,8 @@ process.stdin.on('end', () => {
   const model    = data?.model?.display_name ?? 'Claude';
   const folder   = path.basename(process.cwd());
   const duration = fmtDuration(data?.cost?.total_duration_ms);
+  const costUsd  = data?.cost?.total_cost_usd;
+  const cost     = costUsd != null ? `$${costUsd.toFixed(2)}` : null;
 
   const branch = getGitBranch();
 
@@ -85,6 +89,8 @@ process.stdin.on('end', () => {
 
   if (duration) parts.push(`${DURATION_COLOR}${DURATION_ICON} ${duration}${RESET}`);
   if (branch) parts.push(`${BRANCH_COLOR}${BRANCH_ICON} ${branch}${RESET}`);
+
+  if (cost) parts.push(`${COST_COLOR}${COST_ICON} ${cost}${RESET}`);
 
   const bar = renderContextBar(data?.context_window);
   if (bar) parts.push(bar);
