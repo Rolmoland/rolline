@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 
-const MODEL_COLOR  = '\x1b[36m';
-const FOLDER_COLOR = '\x1b[33m';
-const BRANCH_COLOR = '\x1b[35m';
+const MODEL_COLOR    = '\x1b[36m';
+const FOLDER_COLOR   = '\x1b[33m';
+const BRANCH_COLOR   = '\x1b[35m';
+const DURATION_COLOR = '\x1b[97m';
 const GREEN        = '\x1b[32m';
 const YELLOW       = '\x1b[33m';
 const RED          = '\x1b[31m';
 const SEP          = ' \x1b[90m·\x1b[0m ';
 const RESET        = '\x1b[0m';
 
-const MODEL_ICON  = '🧠';
-const FOLDER_ICON = '📂';
-const BRANCH_ICON = '🌲';
+const MODEL_ICON    = '🧠';
+const FOLDER_ICON   = '📂';
+const BRANCH_ICON   = '🌲';
+const DURATION_ICON = '⌛';
 
 const path = require('path');
 const { execSync } = require('child_process');
@@ -23,6 +25,15 @@ function getGitBranch() {
   } catch (_) {
     return null;
   }
+}
+
+function fmtDuration(ms) {
+  if (!ms) return null;
+  const secs = Math.floor(ms / 1000);
+  const hours = Math.floor(secs / 3600);
+  const mins  = Math.floor((secs % 3600) / 60);
+  if (hours > 0) return `${hours}h${mins}m`;
+  return `${mins}m`;
 }
 
 function fmtTokens(n) {
@@ -61,8 +72,9 @@ process.stdin.on('end', () => {
   let data = {};
   try { data = JSON.parse(raw); } catch (_) {}
 
-  const model  = data?.model?.display_name ?? 'Claude';
-  const folder = path.basename(process.cwd());
+  const model    = data?.model?.display_name ?? 'Claude';
+  const folder   = path.basename(process.cwd());
+  const duration = fmtDuration(data?.cost?.total_duration_ms);
 
   const branch = getGitBranch();
 
@@ -71,6 +83,7 @@ process.stdin.on('end', () => {
     `${FOLDER_COLOR}${FOLDER_ICON} ${folder}${RESET}`,
   ];
 
+  if (duration) parts.push(`${DURATION_COLOR}${DURATION_ICON} ${duration}${RESET}`);
   if (branch) parts.push(`${BRANCH_COLOR}${BRANCH_ICON} ${branch}${RESET}`);
 
   const bar = renderContextBar(data?.context_window);
