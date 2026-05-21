@@ -8,8 +8,8 @@
 
 <!-- @@@auto:current-status -->
 - **Active File**: `journal-1.md`
-- **Total Sessions**: 4
-- **Last Active**: 2026-05-01
+- **Total Sessions**: 5
+- **Last Active**: 2026-05-21
 <!-- @@@/auto:current-status -->
 
 ---
@@ -19,7 +19,7 @@
 <!-- @@@auto:active-documents -->
 | File | Lines | Status |
 |------|-------|--------|
-| `journal-1.md` | ~170 | Active |
+| `journal-1.md` | ~217 | Active |
 <!-- @@@/auto:active-documents -->
 
 ---
@@ -29,6 +29,7 @@
 <!-- @@@auto:session-history -->
 | # | Date | Title | Commits | Branch |
 |---|------|-------|---------|--------|
+| 5 | 2026-05-21 | v1.6：Powerline 胶囊风格 statusLine | `030cd7a` | `master` |
 | 4 | 2026-05-01 | v1.2.1 fix: 启动时显示上下文占用条 | `b94a0c6` | `master` |
 | 3 | 2026-05-01 | feat: rolline v1.2 context usage bar | `6dec335` | `master` |
 | 2 | 2026-04-29 | feat(rolline): v1.1.0 图标+卸载+项目级安装 | `105c03e` | `master` |

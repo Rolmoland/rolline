@@ -168,3 +168,50 @@
 ### Next Steps
 
 - None - task complete
+
+
+## Session 5: v1.6：Powerline 胶囊风格 statusLine
+
+**Date**: 2026-05-21
+**Task**: v1.6：Powerline 胶囊风格 statusLine
+**Branch**: `master`
+
+### Summary
+
+(Add summary)
+
+### Main Changes
+
+将 rolline statusLine 从文字色+emoji 单行升级为 Powerline 无缝箭头胶囊风格。
+
+| 项目 | 说明 |
+|------|------|
+| 风格 | Powerline 实心箭头 ``，段间色块无缝过渡 |
+| 布局 | 单行，顺序：模型 → 文件夹 → 时长 → 费用 → 上下文条 → 分支 |
+| 图标 | 去除 emoji，改用 `*`（模型）、`⌂`（文件夹）、`⧗`（时长） |
+| 配色 | 6色不重复：橙/蓝/紫/绿/粉紫(ctx低)/青，ctx中=金黄，ctx高=红 |
+| 上下文条 | 保留 `▰▱` 进度条格式，颜色随占用率动态变化 |
+| 版本 | 1.5.0 → 1.6.0 |
+
+**变更文件**：
+- `rolline/lib/statusline.js` — 完整重写
+- `rolline/package.json` — 版本号 + deploy 脚本
+
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `030cd7a` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
