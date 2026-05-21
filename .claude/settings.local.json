@@ -38,7 +38,16 @@
       "Bash(node /f/code/vibe_project/statueLine/rolline/lib/statusline.js)",
       "Bash(git -C /f/code/vibe_project/statueLine diff --name-only)",
       "Bash(git -C /f/code/vibe_project/statueLine status)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(xargs grep *)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(xargs -I{} sh -c 'cat \"{}\" 2>/dev/null')",
+      "Bash(grep -o '\"name\":\"Bash\",\"input\":{\"command\":\"[^\"]*\"')",
+      "Bash(mkdir -p .trellis/tasks/archive/2026-05)",
+      "Bash(mv .trellis/tasks/v1.4-session-duration .trellis/tasks/archive/2026-05/)",
+      "Bash(xargs -I {} basename {})",
+      "Bash(node -e ' *)",
+      "Bash(node *)"
     ]
   }
 }
