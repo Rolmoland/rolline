@@ -47,7 +47,11 @@
       "Bash(mv .trellis/tasks/v1.4-session-duration .trellis/tasks/archive/2026-05/)",
       "Bash(xargs -I {} basename {})",
       "Bash(node -e ' *)",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(dir *)",
+      "Bash(npm run *)",
+      "Bash(grep -n \"◷\\\\|⎇\\\\|\\\\$ \\\\${cost}\" \"/c/Users/22067/.claude/rolline.js\")",
+      "Bash(PYTHONIOENCODING=utf-8 python *)"
     ]
   }
 }

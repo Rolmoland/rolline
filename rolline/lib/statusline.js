@@ -92,16 +92,16 @@ process.stdin.on('end', () => {
   const branch   = getGitBranch();
   const duration = fmtDuration(data?.cost?.total_duration_ms);
   const costUsd  = data?.cost?.total_cost_usd;
-  const cost     = costUsd != null ? `$${costUsd.toFixed(2)}` : null;
+  const cost     = costUsd != null ? costUsd.toFixed(2) : null;
   const ctx      = ctxSegment(data?.context_window);
 
   const segs = [
     { color: C.model, text: `* ${model}` },
     { color: C.cwd,   text: `⌂ ${folder}` },
-    duration ? { color: C.dur,  text: `⧗ ${duration}` } : null,
-    cost     ? { color: C.cost, text: cost }      : null,
+    duration ? { color: C.dur,  text: ` ${duration}` } : null,
+    cost     ? { color: C.cost, text: `$ ${cost}` }      : null,
+    branch   ? { color: C.branch, text: ` ${branch}` }  : null,
     ctx,
-    branch   ? { color: C.branch, text: branch }  : null,
   ].filter(Boolean);
 
   process.stdout.write(renderLine(segs) + '\n');
